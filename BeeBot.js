@@ -5,7 +5,7 @@ var script = require("./script.json");
 var config = require("./config.json");
 console.log(script);
 bot.on("message", function(msg){
-	if (msg.cleanContent == "Bee Movie script, please."){
+	if (msg.cleanContent == config.keyword){
 		msg.delete(0);
 		console.log("Command fired by " + msg.author.name + "! Posting Script...");
 		var i = 0;
