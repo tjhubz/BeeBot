@@ -2,9 +2,11 @@
 var Discord = require("discord.js");
 var bot = new Discord.Client();
 var script = require("./script.json");
+var config = require("./config.json");
 console.log(script);
 bot.on("message", function(msg){
 	if (msg.cleanContent == "Bee Movie script, please."){
+		msg.delete(0);
 		console.log("Command fired by " + msg.author.name + "! Posting Script...");
 		var i = 0;
 		var running = setInterval( scriptFunction, 2000);
@@ -22,4 +24,4 @@ bot.on("ready", function(){
 	console.log("BeeBot is running!");
 })
 
-bot.loginWithToken("INSERT BOT TOKEN HERE");
+bot.loginWithToken(config.token);
