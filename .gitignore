@@ -49,3 +49,4 @@ Temporary Items
 # Instance files
 node-modules/
 script.json
+config.json
